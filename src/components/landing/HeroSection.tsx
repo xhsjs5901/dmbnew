@@ -5,8 +5,67 @@ import AnimatedCounter from "./AnimatedCounter";
 import HeroMatchShowcase from "./HeroMatchShowcase";
 import FluidBackground from "./FluidBackground";
 import ParticleTrail from "./ParticleTrail";
+import confetti from "canvas-confetti";
 
 const HeroSection = () => {
+  const triggerHeartConfetti = () => {
+    const defaults = {
+      spread: 360,
+      ticks: 100,
+      gravity: 0.5,
+      decay: 0.94,
+      startVelocity: 30,
+      colors: ['#FF4D8D', '#FF6B9D', '#E91E63', '#FF1493', '#DB2777'],
+    };
+
+    const heart = confetti.shapeFromPath({
+      path: 'M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z',
+    });
+
+    // Center burst
+    confetti({
+      ...defaults,
+      particleCount: 50,
+      shapes: [heart],
+      scalar: 1.5,
+    });
+
+    // Left burst
+    setTimeout(() => {
+      confetti({
+        ...defaults,
+        particleCount: 30,
+        origin: { x: 0.3, y: 0.6 },
+        shapes: [heart],
+        scalar: 1.2,
+      });
+    }, 100);
+
+    // Right burst
+    setTimeout(() => {
+      confetti({
+        ...defaults,
+        particleCount: 30,
+        origin: { x: 0.7, y: 0.6 },
+        shapes: [heart],
+        scalar: 1.2,
+      });
+    }, 200);
+
+    // Sparkle effect
+    setTimeout(() => {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#FFD700', '#FFA500', '#FF69B4'],
+        ticks: 200,
+        gravity: 0.8,
+        scalar: 0.8,
+        drift: 0,
+      });
+    }, 150);
+  };
   return (
     <section className="relative min-h-[100dvh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-24 sm:py-28 lg:py-20 overflow-hidden">
       {/* WebGL Fluid Background */}
@@ -70,6 +129,7 @@ const HeroSection = () => {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
+                onClick={triggerHeartConfetti}
                 className="btn-gradient text-base sm:text-lg pulse-glow w-full sm:w-auto"
               >
                 <Heart className="w-4 h-4 sm:w-5 sm:h-5 inline mr-2" />

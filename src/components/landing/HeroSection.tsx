@@ -3,10 +3,13 @@ import { Heart, Shield, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedCounter from "./AnimatedCounter";
 import HeroMatchShowcase from "./HeroMatchShowcase";
+import FluidBackground from "./FluidBackground";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-[100dvh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-24 sm:py-28 lg:py-20 overflow-hidden">
+      {/* WebGL Fluid Background */}
+      <FluidBackground />
       <div className="container mx-auto max-w-7xl w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
           {/* Left Content */}

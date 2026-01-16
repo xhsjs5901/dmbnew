@@ -30,6 +30,11 @@
     --gold-shimmer: 45 95% 65%;
     --platinum: 220 15% 80%;
     
+    /* Extended Colors for components */
+    --coral: 15 90% 60%;
+    --royal: 270 70% 50%;
+    --teal: 175 85% 45%;
+    
     /* Base Theme */
     --background: 0 0% 100%;
     --foreground: 240 10% 10%;

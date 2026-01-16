@@ -136,7 +136,7 @@ const HeroSection = () => {
                 Start Your Journey
               </motion.button>
               
-              <Button variant="outline" size="lg" className="rounded-full px-6 sm:px-8 w-full sm:w-auto">
+              <Button variant="outline" size="lg" className="rounded-full px-6 sm:px-8 w-full sm:w-auto btn-outline-breathe">
                 <Users className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 For Families
               </Button>

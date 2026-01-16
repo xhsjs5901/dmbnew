@@ -229,6 +229,76 @@
     animation: pulse-glow 2s ease-in-out infinite;
   }
   
+  /* Breathing Glow on Hover */
+  .btn-breathe {
+    @apply relative transition-all duration-300;
+  }
+  
+  .btn-breathe::before {
+    content: '';
+    @apply absolute inset-0 rounded-full opacity-0 transition-opacity duration-300;
+    background: inherit;
+    filter: blur(20px);
+    z-index: -1;
+  }
+  
+  .btn-breathe:hover::before {
+    opacity: 0.6;
+    animation: breathe-glow 1.5s ease-in-out infinite;
+  }
+  
+  .btn-breathe:hover {
+    animation: breathe-scale 1.5s ease-in-out infinite;
+  }
+  
+  /* Gradient Button with Breathing */
+  .btn-gradient {
+    @apply relative overflow-hidden rounded-full px-8 py-4 font-semibold text-white transition-all duration-300;
+    background: var(--gradient-primary);
+    box-shadow: 0 4px 24px -4px hsl(330 85% 45% / 0.5);
+  }
+  
+  .btn-gradient::before {
+    content: '';
+    @apply absolute inset-0 rounded-full opacity-0 transition-opacity duration-300;
+    background: var(--gradient-primary);
+    filter: blur(24px);
+    z-index: -1;
+  }
+  
+  .btn-gradient:hover {
+    transform: translateY(-2px);
+    animation: breathe-scale 1.5s ease-in-out infinite;
+  }
+  
+  .btn-gradient:hover::before {
+    opacity: 0.7;
+    animation: breathe-glow 1.5s ease-in-out infinite;
+  }
+  
+  /* Outline Button with Breathing */
+  .btn-outline-breathe {
+    @apply relative transition-all duration-300;
+  }
+  
+  .btn-outline-breathe::before {
+    content: '';
+    @apply absolute inset-0 rounded-full opacity-0 transition-opacity duration-300;
+    background: hsl(var(--primary));
+    filter: blur(16px);
+    z-index: -1;
+  }
+  
+  .btn-outline-breathe:hover::before {
+    opacity: 0.3;
+    animation: breathe-glow 1.5s ease-in-out infinite;
+  }
+  
+  .btn-outline-breathe:hover {
+    @apply border-primary text-primary;
+    animation: breathe-scale-subtle 1.5s ease-in-out infinite;
+  }
+  
   /* Stat Counter */
   .stat-card {
     @apply glass-card p-6 text-center;
@@ -276,6 +346,35 @@
     }
     50% {
       box-shadow: 0 0 40px hsl(330 85% 45% / 0.7);
+    }
+  }
+  
+  @keyframes breathe-glow {
+    0%, 100% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+  }
+  
+  @keyframes breathe-scale {
+    0%, 100% {
+      transform: translateY(-2px) scale(1);
+    }
+    50% {
+      transform: translateY(-2px) scale(1.02);
+    }
+  }
+  
+  @keyframes breathe-scale-subtle {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.015);
     }
   }
   

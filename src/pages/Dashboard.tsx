@@ -57,9 +57,9 @@ const Dashboard = () => {
           }
         }
 
-        // Fetch other profiles (excluding own)
+        // Fetch other profiles using the public view (excludes sensitive PII like email, phone, medical_registration_number)
         const { data: otherProfiles } = await supabase
-          .from('profiles')
+          .from('profiles_public')
           .select('*')
           .neq('user_id', user.id)
           .eq('is_profile_complete', true)

@@ -235,7 +235,114 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      profiles_public: {
+        Row: {
+          about_me: string | null
+          avatar_url: string | null
+          city: string | null
+          country: string | null
+          created_at: string | null
+          date_of_birth: string | null
+          family_verified: boolean | null
+          first_name: string | null
+          gender: Database["public"]["Enums"]["gender"] | null
+          height_cm: number | null
+          hospital_name: string | null
+          id: string | null
+          is_profile_complete: boolean | null
+          last_active_at: string | null
+          last_name: string | null
+          looking_for: string | null
+          marital_status: Database["public"]["Enums"]["marital_status"] | null
+          photos: string[] | null
+          preferred_age_max: number | null
+          preferred_age_min: number | null
+          preferred_location: string[] | null
+          questionnaire_completed: boolean | null
+          specialty: Database["public"]["Enums"]["medical_specialty"] | null
+          state: string | null
+          subscription_tier:
+            | Database["public"]["Enums"]["subscription_tier"]
+            | null
+          updated_at: string | null
+          user_id: string | null
+          verification_status:
+            | Database["public"]["Enums"]["verification_status"]
+            | null
+          years_of_experience: number | null
+        }
+        Insert: {
+          about_me?: string | null
+          avatar_url?: string | null
+          city?: string | null
+          country?: string | null
+          created_at?: string | null
+          date_of_birth?: string | null
+          family_verified?: boolean | null
+          first_name?: string | null
+          gender?: Database["public"]["Enums"]["gender"] | null
+          height_cm?: number | null
+          hospital_name?: string | null
+          id?: string | null
+          is_profile_complete?: boolean | null
+          last_active_at?: string | null
+          last_name?: string | null
+          looking_for?: string | null
+          marital_status?: Database["public"]["Enums"]["marital_status"] | null
+          photos?: string[] | null
+          preferred_age_max?: number | null
+          preferred_age_min?: number | null
+          preferred_location?: string[] | null
+          questionnaire_completed?: boolean | null
+          specialty?: Database["public"]["Enums"]["medical_specialty"] | null
+          state?: string | null
+          subscription_tier?:
+            | Database["public"]["Enums"]["subscription_tier"]
+            | null
+          updated_at?: string | null
+          user_id?: string | null
+          verification_status?:
+            | Database["public"]["Enums"]["verification_status"]
+            | null
+          years_of_experience?: number | null
+        }
+        Update: {
+          about_me?: string | null
+          avatar_url?: string | null
+          city?: string | null
+          country?: string | null
+          created_at?: string | null
+          date_of_birth?: string | null
+          family_verified?: boolean | null
+          first_name?: string | null
+          gender?: Database["public"]["Enums"]["gender"] | null
+          height_cm?: number | null
+          hospital_name?: string | null
+          id?: string | null
+          is_profile_complete?: boolean | null
+          last_active_at?: string | null
+          last_name?: string | null
+          looking_for?: string | null
+          marital_status?: Database["public"]["Enums"]["marital_status"] | null
+          photos?: string[] | null
+          preferred_age_max?: number | null
+          preferred_age_min?: number | null
+          preferred_location?: string[] | null
+          questionnaire_completed?: boolean | null
+          specialty?: Database["public"]["Enums"]["medical_specialty"] | null
+          state?: string | null
+          subscription_tier?:
+            | Database["public"]["Enums"]["subscription_tier"]
+            | null
+          updated_at?: string | null
+          user_id?: string | null
+          verification_status?:
+            | Database["public"]["Enums"]["verification_status"]
+            | null
+          years_of_experience?: number | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       [_ in never]: never

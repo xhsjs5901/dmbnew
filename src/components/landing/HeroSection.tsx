@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { Heart, Shield, Sparkles, Users } from "lucide-react";
+import { Heart, Shield, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedCounter from "./AnimatedCounter";
+import HeroMatchShowcase from "./HeroMatchShowcase";
 
 const HeroSection = () => {
   return (
@@ -95,74 +96,14 @@ const HeroSection = () => {
             </motion.div>
           </motion.div>
           
-          {/* Right Content - Glassmorphism Registration Card */}
+          {/* Right Content - Dynamic Match Showcase */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             className="relative order-1 lg:order-2"
           >
-            {/* Floating decorative elements - hidden on mobile for performance */}
-            <motion.div
-              className="absolute -top-6 -right-6 sm:-top-10 sm:-right-10 w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-primary to-coral opacity-20 blur-xl hidden sm:block"
-              animate={{ y: [-10, 10, -10], rotate: [0, 5, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <motion.div
-              className="absolute -bottom-6 -left-6 sm:-bottom-10 sm:-left-10 w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-royal to-teal opacity-20 blur-xl hidden sm:block"
-              animate={{ y: [10, -10, 10], rotate: [0, -5, 0] }}
-              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            />
-            
-            {/* Main Card */}
-            <motion.div
-              className="glass-card p-5 sm:p-6 md:p-8 lg:p-10 relative overflow-hidden"
-              whileHover={{ y: -5 }}
-              transition={{ duration: 0.3 }}
-            >
-              {/* Premium badge */}
-              <div className="absolute -top-1 -right-1 z-10">
-                <div className="badge-gold text-xs sm:text-sm">
-                  <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
-                  <span className="hidden xs:inline">Premium </span>Platform
-                </div>
-              </div>
-              
-              <div className="pt-4 sm:pt-6">
-                <h2 className="font-serif text-xl sm:text-2xl lg:text-3xl font-bold mb-1.5 sm:mb-2 pr-20 sm:pr-0">
-                  Find Your Perfect Match
-                </h2>
-                <p className="text-sm sm:text-base text-muted-foreground mb-5 sm:mb-6 md:mb-8">
-                  Join thousands of medical professionals who found love
-                </p>
-                
-                {/* Quick signup form preview */}
-                <div className="space-y-3 sm:space-y-4">
-                  <div className="grid grid-cols-2 gap-2.5 sm:gap-4">
-                    <div className="p-3 sm:p-4 rounded-xl bg-secondary/50 border border-border text-center hover:bg-secondary transition-colors cursor-pointer">
-                      <span className="text-xl sm:text-2xl block mb-0.5 sm:mb-1">👨‍⚕️</span>
-                      <span className="text-xs sm:text-sm font-medium">I'm a Doctor</span>
-                    </div>
-                    <div className="p-3 sm:p-4 rounded-xl bg-secondary/50 border border-border text-center hover:bg-secondary transition-colors cursor-pointer">
-                      <span className="text-xl sm:text-2xl block mb-0.5 sm:mb-1">👨‍👩‍👧</span>
-                      <span className="text-xs sm:text-sm font-medium">I'm a Parent</span>
-                    </div>
-                  </div>
-                  
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="w-full btn-gradient text-base sm:text-lg py-3 sm:py-4"
-                  >
-                    Create Free Account
-                  </motion.button>
-                  
-                  <p className="text-[10px] sm:text-xs text-center text-muted-foreground px-2">
-                    By signing up, you agree to our Terms of Service and Privacy Policy
-                  </p>
-                </div>
-              </div>
-            </motion.div>
+            <HeroMatchShowcase />
           </motion.div>
         </div>
       </div>

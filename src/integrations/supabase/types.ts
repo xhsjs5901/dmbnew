@@ -14,7 +14,225 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      compatibility_scores: {
+        Row: {
+          career_score: number | null
+          created_at: string
+          id: string
+          lifestyle_score: number | null
+          overall_score: number
+          personality_score: number | null
+          user_id_1: string
+          user_id_2: string
+          values_score: number | null
+        }
+        Insert: {
+          career_score?: number | null
+          created_at?: string
+          id?: string
+          lifestyle_score?: number | null
+          overall_score: number
+          personality_score?: number | null
+          user_id_1: string
+          user_id_2: string
+          values_score?: number | null
+        }
+        Update: {
+          career_score?: number | null
+          created_at?: string
+          id?: string
+          lifestyle_score?: number | null
+          overall_score?: number
+          personality_score?: number | null
+          user_id_1?: string
+          user_id_2?: string
+          values_score?: number | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          about_me: string | null
+          avatar_url: string | null
+          city: string | null
+          country: string | null
+          created_at: string
+          date_of_birth: string | null
+          email: string
+          family_verified: boolean | null
+          first_name: string
+          gender: Database["public"]["Enums"]["gender"] | null
+          height_cm: number | null
+          hospital_name: string | null
+          id: string
+          is_profile_complete: boolean | null
+          last_active_at: string | null
+          last_name: string
+          looking_for: string | null
+          marital_status: Database["public"]["Enums"]["marital_status"] | null
+          medical_registration_number: string | null
+          phone: string | null
+          photos: string[] | null
+          preferred_age_max: number | null
+          preferred_age_min: number | null
+          preferred_location: string[] | null
+          questionnaire_completed: boolean | null
+          specialty: Database["public"]["Enums"]["medical_specialty"] | null
+          state: string | null
+          subscription_tier:
+            | Database["public"]["Enums"]["subscription_tier"]
+            | null
+          updated_at: string
+          user_id: string
+          verification_status:
+            | Database["public"]["Enums"]["verification_status"]
+            | null
+          years_of_experience: number | null
+        }
+        Insert: {
+          about_me?: string | null
+          avatar_url?: string | null
+          city?: string | null
+          country?: string | null
+          created_at?: string
+          date_of_birth?: string | null
+          email: string
+          family_verified?: boolean | null
+          first_name: string
+          gender?: Database["public"]["Enums"]["gender"] | null
+          height_cm?: number | null
+          hospital_name?: string | null
+          id?: string
+          is_profile_complete?: boolean | null
+          last_active_at?: string | null
+          last_name: string
+          looking_for?: string | null
+          marital_status?: Database["public"]["Enums"]["marital_status"] | null
+          medical_registration_number?: string | null
+          phone?: string | null
+          photos?: string[] | null
+          preferred_age_max?: number | null
+          preferred_age_min?: number | null
+          preferred_location?: string[] | null
+          questionnaire_completed?: boolean | null
+          specialty?: Database["public"]["Enums"]["medical_specialty"] | null
+          state?: string | null
+          subscription_tier?:
+            | Database["public"]["Enums"]["subscription_tier"]
+            | null
+          updated_at?: string
+          user_id: string
+          verification_status?:
+            | Database["public"]["Enums"]["verification_status"]
+            | null
+          years_of_experience?: number | null
+        }
+        Update: {
+          about_me?: string | null
+          avatar_url?: string | null
+          city?: string | null
+          country?: string | null
+          created_at?: string
+          date_of_birth?: string | null
+          email?: string
+          family_verified?: boolean | null
+          first_name?: string
+          gender?: Database["public"]["Enums"]["gender"] | null
+          height_cm?: number | null
+          hospital_name?: string | null
+          id?: string
+          is_profile_complete?: boolean | null
+          last_active_at?: string | null
+          last_name?: string
+          looking_for?: string | null
+          marital_status?: Database["public"]["Enums"]["marital_status"] | null
+          medical_registration_number?: string | null
+          phone?: string | null
+          photos?: string[] | null
+          preferred_age_max?: number | null
+          preferred_age_min?: number | null
+          preferred_location?: string[] | null
+          questionnaire_completed?: boolean | null
+          specialty?: Database["public"]["Enums"]["medical_specialty"] | null
+          state?: string | null
+          subscription_tier?:
+            | Database["public"]["Enums"]["subscription_tier"]
+            | null
+          updated_at?: string
+          user_id?: string
+          verification_status?:
+            | Database["public"]["Enums"]["verification_status"]
+            | null
+          years_of_experience?: number | null
+        }
+        Relationships: []
+      }
+      questionnaire_responses: {
+        Row: {
+          adventure_level: string | null
+          career_ambition: string | null
+          communication_style: string | null
+          conflict_resolution: string | null
+          created_at: string
+          decision_making: string | null
+          dietary_preferences: string | null
+          family_importance: string | null
+          financial_goals: string | null
+          health_fitness: string | null
+          id: string
+          life_priorities: string[] | null
+          religious_practice: string | null
+          relocation_willingness: string | null
+          social_nature: string | null
+          traditional_values: string | null
+          updated_at: string
+          user_id: string
+          work_life_balance: string | null
+        }
+        Insert: {
+          adventure_level?: string | null
+          career_ambition?: string | null
+          communication_style?: string | null
+          conflict_resolution?: string | null
+          created_at?: string
+          decision_making?: string | null
+          dietary_preferences?: string | null
+          family_importance?: string | null
+          financial_goals?: string | null
+          health_fitness?: string | null
+          id?: string
+          life_priorities?: string[] | null
+          religious_practice?: string | null
+          relocation_willingness?: string | null
+          social_nature?: string | null
+          traditional_values?: string | null
+          updated_at?: string
+          user_id: string
+          work_life_balance?: string | null
+        }
+        Update: {
+          adventure_level?: string | null
+          career_ambition?: string | null
+          communication_style?: string | null
+          conflict_resolution?: string | null
+          created_at?: string
+          decision_making?: string | null
+          dietary_preferences?: string | null
+          family_importance?: string | null
+          financial_goals?: string | null
+          health_fitness?: string | null
+          id?: string
+          life_priorities?: string[] | null
+          religious_practice?: string | null
+          relocation_willingness?: string | null
+          social_nature?: string | null
+          traditional_values?: string | null
+          updated_at?: string
+          user_id?: string
+          work_life_balance?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +241,38 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      gender: "male" | "female"
+      marital_status: "never_married" | "divorced" | "widowed"
+      medical_specialty:
+        | "general_medicine"
+        | "cardiology"
+        | "neurology"
+        | "orthopedics"
+        | "pediatrics"
+        | "psychiatry"
+        | "dermatology"
+        | "oncology"
+        | "surgery"
+        | "anesthesiology"
+        | "radiology"
+        | "pathology"
+        | "emergency_medicine"
+        | "family_medicine"
+        | "internal_medicine"
+        | "obstetrics_gynecology"
+        | "ophthalmology"
+        | "ent"
+        | "urology"
+        | "nephrology"
+        | "gastroenterology"
+        | "pulmonology"
+        | "endocrinology"
+        | "rheumatology"
+        | "infectious_disease"
+        | "dentistry"
+        | "other"
+      subscription_tier: "basic" | "gold" | "platinum"
+      verification_status: "pending" | "in_review" | "verified" | "rejected"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +399,40 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      gender: ["male", "female"],
+      marital_status: ["never_married", "divorced", "widowed"],
+      medical_specialty: [
+        "general_medicine",
+        "cardiology",
+        "neurology",
+        "orthopedics",
+        "pediatrics",
+        "psychiatry",
+        "dermatology",
+        "oncology",
+        "surgery",
+        "anesthesiology",
+        "radiology",
+        "pathology",
+        "emergency_medicine",
+        "family_medicine",
+        "internal_medicine",
+        "obstetrics_gynecology",
+        "ophthalmology",
+        "ent",
+        "urology",
+        "nephrology",
+        "gastroenterology",
+        "pulmonology",
+        "endocrinology",
+        "rheumatology",
+        "infectious_disease",
+        "dentistry",
+        "other",
+      ],
+      subscription_tier: ["basic", "gold", "platinum"],
+      verification_status: ["pending", "in_review", "verified", "rejected"],
+    },
   },
 } as const
